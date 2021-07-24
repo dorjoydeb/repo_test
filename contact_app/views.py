@@ -9,7 +9,14 @@ def home(request):
     Social_data = Footar.objects.all()
     Contact_Top_data = Contact_top_bar.objects.all()
     Contact_body_data = Contact_body_section.objects.all()
-    Email_data = Contact_email_section
+
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+        contact_data = Contact_email_section(Name=name, Email=email, Subject=subject, Description=message)
+        contact_data.save()
 
     super = {
         'social': Social_data,
