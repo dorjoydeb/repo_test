@@ -16,9 +16,9 @@ class Post_Blog_sections(models.Model):
     Blog_Name = models.CharField(max_length=50, blank=False)
     Blog_title = models.CharField(max_length=100, blank=False)
     Sub_title = models.CharField(max_length=200, blank=True)
-    Description = models.CharField(max_length=1000, blank=False)
+    Description = models.TextField(max_length=1000, blank=False)
     Image = models.ImageField(upload_to='Blog_images/', blank=True)
 
     def __str__(self):
-        return self.Blog_name
+        return self.Blog_Name
 # Create your models here.

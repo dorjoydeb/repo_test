@@ -24,10 +24,12 @@
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <!-- Post preview-->
                     <div class="post-preview">
+                       {% for blogg in blog %}
                         <a href="post.html">
-                            <h2 class="post-title">i am post title</h2>
-                            <h3 class="post-subtitle">i am post subtitle</h3>
+                            <h2 class="post-title">{{blogg.Blog_title}}</h2>
+                            <h3 class="post-subtitle">{{blogg.Sub_title}}</h3>
                         </a>
+                        {% endfor %}
                         <p class="post-meta">
                             Posted by
                             <a href="#!">Start Bootstrap</a>
