@@ -4,25 +4,13 @@
 
 {% load static %}
 <!-- Page Header-->
-<header class="masthead" style="background-image: url('{{c_t_data.0.Background_image.url}}')">
-    <div class="container position-relative px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-10 col-lg-8 col-xl-7">
-                <div class="page-heading">
-                    <h1>{{ c_t_data.0.Title }}</h1>
-                    <span class="subheading">{{ c_t_data.0.Sub_title}}</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
+
 <!-- Main Content-->
         <main class="mb-4">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
-                        <p>{{c_b_data.0.Description}}</p>
-                        <div class="my-5">
+                        <div class="my-5" style="margin-top: 50% !important;">
                             <!-- * * * * * * * * * * * * * * *-->
                             <!-- * * SB Forms Contact Form * *-->
                             <!-- * * * * * * * * * * * * * * *-->
@@ -38,25 +26,27 @@
                                   <div class="row">
 
                                     <div class="col-md-6 form-group">
-                                      <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                                      <input type="text" name="name" class="form-control" id="name" placeholder="Name" required>
                                     </div>
 
                                     <div class="col-md-6 form-group mt-3 mt-md-0">
-                                      <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                                      <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
                                     </div>
 
 
                                   <div class="form-group mt-3">
-                                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                                    <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
                                   </div>
 
                                   <div class="form-group mt-3">
-                                    <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                                    <input type="conform_password" class="form-control" name="conform_password" id="conform_password" placeholder="Conform Password" required>
                                   </div>
+                                  </div><br>
 
-                                  </div>
 
-                                  <div><button type="submit" class="btn btn-success">Send Message</button></div>
+                                  <div><button type="submit" class="btn btn-success form-control">Register now</button></div>
+                                    <small style="font-size: 13px;">If you have already account than <a href="{% url 'login' %}">log in now</a></small>
+
                                 </form>
                               </div>
                         </div>

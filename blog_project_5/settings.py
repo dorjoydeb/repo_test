@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'contact_app',
     'layout_app',
     'post_app',
+    'auth_app',
 ]
 
 MIDDLEWARE = [
