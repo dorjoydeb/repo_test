@@ -20,6 +20,9 @@
                     </div>
                 </div>
             </div>
+
+
+
         </header>
         <!-- Post Content-->
         <article class="mb-4">
@@ -35,5 +38,17 @@
                     </div>
                 </div>
             </div>
+
+                                  {% if messages %}
+                                     {% for message in messages %}
+                                         <div class="messages">
+                                            <div class="{{message.tags}}" role="alert" style="text-align: center;">
+                                                {{message}}
+                                            </div>
+                                         </div>
+                                     {% endfor %}
+                                  {% endif %}
+
+
         </article>
 {% endblock %}

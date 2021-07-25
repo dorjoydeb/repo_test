@@ -1,7 +1,9 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from layout_app.models import *
+from django.contrib import messages
 
 register_page = 'register.html'
 login_page = 'login.html'
@@ -19,17 +21,22 @@ def register(request):
 
 def userlogin(request):
     if request.method == 'POST':
-        name = request.POST.get('email')
-        password = request.POST.get('password')
+        name = request.POST['email']
+        password = request.POST['password']
         user = authenticate(request, username=name, password=password)
         if user is not None:
-            login(request,user)
-            return redirect('blog.home')
+            login(request, user)
+            messages.success(request, 'Successfully login complete')
+            return redirect('profile')
         else:
-            print('invalit user')
-
+            messages.error(request, 'Invalid User and password')
     return render(request, login_page)
 
+
+def exep(request):
+     return HttpResponse('i am exep')
+
+@login_required
 def profile(request):
     return render(request, 'Profile.html')
 

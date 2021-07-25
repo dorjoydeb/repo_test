@@ -24,6 +24,15 @@
 
                                     {%csrf_token%}
                                   <div class="row">
+                              {% if messages %}
+                                 {% for message in messages %}
+                                      <div class = "form-group">
+                                        <div class="{{ message.tags }}" style="text-align: center;">
+                                            {{ message }}
+                                        </div>
+                                      </div>
+                                 {% endfor %}
+                              {% endif %}
 
                                     <div class="form-group mt-3">
                                       <input type="email" class="form-control" name="email" id="email" placeholder="Username or Email" required>
@@ -38,7 +47,7 @@
                                     <br>
 
 
-                                  <div><button type="submit" class="btn btn-success form-control">Log in now</button></div>
+                                  <div ><button type="submit" class="btn btn-success form-control">Log in now</button></div>
                                     <small style="font-size: 13px;">If you have already account than <a href="{% url 'register' %}">Register now</a></small>
 
                                 </form>
